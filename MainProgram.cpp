@@ -165,12 +165,13 @@ Student findBestStudent(const Student& a, const Student& b) {
 // Version 2: Takes an array of Students and its size, returns the one with highest GPA
 Student findBestStudent(Student arr[], int size) {
     // YOUR CODE HERE
-    double max = arr[0].getGpa();
-    int x = 0;
+    Student best = arr[0];
     for(int i = 0; i < size; i++){
-        if(max < arr[i].getGpa()) x = i;
+        if(best < arr[i]){
+            best = arr[i];
+        }
     }
-    return arr[x];
+    return best;
 }
 
 // ================================
