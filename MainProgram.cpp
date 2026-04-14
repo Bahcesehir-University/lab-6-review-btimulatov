@@ -40,7 +40,7 @@ public:
     // Set name to "Unknown", id to 0, gpa to 0.0
     Student() {
         // YOUR CODE HERE
-        name = "Unlnown";
+        name = "Unknown";
         id = 0;
         gpa = 0.0;
     }
@@ -67,7 +67,7 @@ public:
     // Print: "Student [name] destroyed"
     ~Student() {
         // YOUR CODE HERE
-        cout << "Student " << name << " destroyed";
+        cout << "Student " << name << " destroyed" << endl;
     }
 
     // ----- Task 2: Getters (Encapsulation) -----
@@ -96,7 +96,7 @@ public:
     // Name must not be empty. If empty, keep current name.
     void setName(string n) {
         // YOUR CODE HERE
-        if(n.length() != 0) name = n;
+        if(!n.empty()) name = n;
     }
 
     // TODO 3b: Setter for GPA
@@ -114,10 +114,11 @@ public:
     // Hint: loop through each character and use toupper()
     string getFormattedName() const {
         // YOUR CODE HERE
-        for(int i = 0; i < name.length(); i++){
-            toupper(name[i]);
+        string n = name;
+        for(int i = 0; i < n.length(); i++){
+            n[i] = toupper(n[i]);
         }
-        return name;
+        return n;
     }
 
     // ----- Task 5: Operator Overloading -----
